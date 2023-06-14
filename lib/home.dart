@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdf_insight/cv_creation.dart';
 import 'package:pdf_insight/pdf_viewer_page.dart';
 import 'package:file_picker/file_picker.dart';
 import 'dart:io';
@@ -143,6 +144,24 @@ class MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              width: 115,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CvCreationPage(),
+                      ),
+                    );
+                  },
+                  child: const Row(
+                    children: [
+                      Icon(Icons.description),
+                      Text('Crear CV'),
+                    ],
+                  )),
+            ),
             const Text(
               'Agregados recientemente',
               style: TextStyle(
